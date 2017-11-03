@@ -1,0 +1,13 @@
+﻿@model List<BookStore.WebApp.Models.Book>
+@{
+    ViewBag.Title = "Books";
+}
+
+@foreach (var book in Model)
+{
+    <ul>
+        <li>@book.Author "@book.Title"</li>
+        <li>Краткое описание:<br>@book.Description</li>
+        <li>Цена: @book.Price рублей.</li>
+    </ul>
+}

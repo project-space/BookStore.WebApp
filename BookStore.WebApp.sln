@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D901A9E-3D55-4C85-A1C8-3118CA2EEF5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.WebApp", "src\BookStore.WebApp\BookStore.WebApp.csproj", "{EA069F40-ACD6-4114-ACB6-55FA7811968A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EA069F40-ACD6-4114-ACB6-55FA7811968A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA069F40-ACD6-4114-ACB6-55FA7811968A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA069F40-ACD6-4114-ACB6-55FA7811968A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA069F40-ACD6-4114-ACB6-55FA7811968A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EA069F40-ACD6-4114-ACB6-55FA7811968A} = {8D901A9E-3D55-4C85-A1C8-3118CA2EEF5E}
+	EndGlobalSection
+EndGlobal
