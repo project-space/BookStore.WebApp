@@ -1,0 +1,32 @@
+﻿@model BookStore.WebApp.Models.GenrePage
+
+@{
+    ViewBag.Title = "Genres";
+}
+
+<div class="genre">
+    <div class="illustration">
+
+    </div>
+    <div class="title">
+        @Model.Genre.Name
+    </div>
+    <div class="description">
+        @Model.Genre.Description
+    </div>
+</div>
+
+<div class="books">
+
+    @foreach (var book in Model.Books)
+    {
+        <div class="section_content">
+            <ul class="book_info">
+                <li>"@book.Title" @book.Author</li>
+                <li>@book.Description</li>
+                <li>Цена: @book.Price</li>
+                <li>Рейтинг: @book.Rating</li>
+            </ul>
+        </div>
+    }
+</div>

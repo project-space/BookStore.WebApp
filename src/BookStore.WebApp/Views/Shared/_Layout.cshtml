@@ -10,9 +10,7 @@
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
-                @Html.ActionLink("Book Store", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
+            @{ Html.RenderAction("Index", "Menu"); }
         </div>
     </div>
     <div class="container body-content">

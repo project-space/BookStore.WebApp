@@ -8,16 +8,18 @@ namespace BookStore.WebApp.Controllers
 {
     public class HomeController : Controller
     {
+        var 
         [HttpGet]
         public ActionResult Index()
         {
-            var httpClient = new HttpClient();
-            var response = httpClient.GetAsync("http://localhost:55328/api/books/").Result;
-            var json = response.Content.ReadAsStringAsync().Result;
+            var novelties = GetBooks("novelties");
+            var popular = GetBooks("popular");
 
-            var books = JsonConvert.DeserializeObject<List<Book>>(json);
+            var model = new MainContentModel { Novelties = novelties, Popular = popular};
 
-            return View(books);
+            return View(model);
         }
+
+
     }
 }

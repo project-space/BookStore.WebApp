@@ -9,6 +9,37 @@
     padding-right: 15px;
 }
 
+.section_content{
+    display:inline-block;
+     padding-right:10px;
+    margin:5px;
+}
+.book_info{
+    list-style: none;
+}
+.title{
+    font: bold 12pt arial;
+}
+.cover_image{
+    height:90px;
+    width:65px;
+    display:block;
+    margin: 0 auto;
+}
+.description_content{
+    font: 10pt arial;
+}
+
+.rating_icon{
+    box-sizing:border-box;
+    width:10px;
+    height:10px;
+}
+
+.price{
+    text-align: right;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -22,3 +53,5 @@ select,
 textarea {
     max-width: 280px;
 }
+
+

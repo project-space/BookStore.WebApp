@@ -1,0 +1,19 @@
+﻿@model List<BookStore.WebApp.Models.Genre>
+
+<ul id="menu">
+    <li>
+        @Html.RouteLink("BookStore", new { controller = "Home", action = "Index"})
+    </li> 
+    <li>
+        <a id="show" href="#">Жанры</a>
+        <ul id="genres">
+            @foreach(var genre in Model)
+            {
+                <li>
+                    @Html.RouteLink($"{genre.Name}", new { controller = "Genre", action = "Index", id = genre.Id })
+                </li>
+            }
+        </ul>
+    </li>
+                
+</ul>
