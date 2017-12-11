@@ -8,7 +8,7 @@ namespace BookStore.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        var 
+       
         [HttpGet]
         public ActionResult Index()
         {

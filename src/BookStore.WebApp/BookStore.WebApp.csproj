@@ -197,6 +197,12 @@
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.BookServiceClient\BookStore.Common.BookServiceClient.csproj">
+      <Project>{a46275e3-5bbb-4b38-83b3-843b2f7003b8}</Project>
+      <Name>BookStore.Common.BookServiceClient</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
