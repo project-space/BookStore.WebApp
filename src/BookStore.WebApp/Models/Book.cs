@@ -1,5 +1,4 @@
-﻿
-namespace BookStore.WebApp.Models
+﻿namespace BookStore.WebApp.Models
 {
     public class Book
     {
