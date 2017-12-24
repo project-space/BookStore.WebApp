@@ -24,5 +24,20 @@
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
+    <script>
+     
+        if (getCookie("cart").length == 0) {
+            $.get('/Cart/Get', function (data) {
+                document.cookie = "cart=" + JSON.stringify(data);
+            });
+        }
+
+
+        function getCookie(name) {
+            var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
+            if (r) return r[2];
+            else return "";
+        }
+    </script>
 </body>
 </html>
