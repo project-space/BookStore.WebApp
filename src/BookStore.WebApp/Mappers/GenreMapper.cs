@@ -1,9 +1,4 @@
-﻿using BookStore.WebApp.Models;
-using BookStore.Common.BookServiceClient.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace BookStore.WebApp.Mappers
 {
@@ -17,7 +12,6 @@ namespace BookStore.WebApp.Mappers
                 Name = genre.Name,
                 Description = genre.Description,
                 IllustrationUrl = genre.IllustrationUrl
-
             };
         }
 
