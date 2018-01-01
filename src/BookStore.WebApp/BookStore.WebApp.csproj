@@ -132,6 +132,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\BookPageController.cs" />
+    <Compile Include="Controllers\CartController.cs" />
+    <Compile Include="Controllers\CartItemController.cs" />
     <Compile Include="Controllers\GenreController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MenuController.cs" />
@@ -139,8 +142,12 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Mappers\BookMapper.cs" />
+    <Compile Include="Mappers\CartItemMapper.cs" />
+    <Compile Include="Mappers\CartMapper.cs" />
     <Compile Include="Mappers\GenreMapper.cs" />
     <Compile Include="Models\Book.cs" />
+    <Compile Include="Models\Cart.cs" />
+    <Compile Include="Models\CartItem.cs" />
     <Compile Include="Models\Genre.cs" />
     <Compile Include="Models\GenrePage.cs" />
     <Compile Include="Models\MainContentModel.cs" />
@@ -158,9 +165,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\Menu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.cookie.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -182,10 +191,12 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Genre\Index.cshtml" />
+    <Content Include="Views\BookPage\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\CartItem\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -202,6 +213,10 @@
     <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.BookServiceClient\BookStore.Common.BookServiceClient.csproj">
       <Project>{a46275e3-5bbb-4b38-83b3-843b2f7003b8}</Project>
       <Name>BookStore.Common.BookServiceClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.PurchaseServiceClient\BookStore.Common.PurchaseServiceClient.csproj">
+      <Project>{6E4BC741-2365-4165-884C-B3E17A15130F}</Project>
+      <Name>BookStore.Common.PurchaseServiceClient</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

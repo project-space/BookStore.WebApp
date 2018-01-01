@@ -1,6 +1,7 @@
 ﻿using BookStore.Common.PurchaseServiceClient;
 using BookStore.WebApp.Mappers;
 using BookStore.WebApp.Models;
+using System.Collections.Generic;
 using System.Web.Mvc;
 
 namespace BookStore.WebApp.Controllers
@@ -14,4 +15,12 @@ namespace BookStore.WebApp.Controllers
         {
             return Json(CartMapper.Map(cartsClient.GetCart()), JsonRequestBehavior.AllowGet);
         }
-    } }
+
+        [HttpGet]
+        public ViewResult Index(int cartId)
+        {
+
+            return View();
+        }
+    }
+}

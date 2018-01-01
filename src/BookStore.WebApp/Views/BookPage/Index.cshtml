@@ -1,0 +1,31 @@
+﻿@model BookStore.WebApp.Models.Book
+<div class="section_content">
+    <div class="cover">
+        <img class="cover_image" src="@Model.CoverUrl" />
+    </div>
+    <h3 class="title">@Model.Title<br /> @Model.Author</h3>
+    <div class="rating">
+        <img class="rating_icon" src="~/Content/images/star.png" />
+        <span class="score">@Model.Rating</span> 
+    </div>
+    <span class="price"> @Model.Price р.</span>
+</div>
+
+<button id="btn"> Добавить книгу в корзину </button>
+
+@section scripts {
+    <input id="bookId" type="hidden" value="@Model.Id" />
+    <script>
+        $(document).ready(function () {
+            $('#btn').click(function () {
+                var cart = JSON.parse($.cookie('cart'));
+                var bookId = $('#bookId').val();
+
+                $.post('/CartItem/Add', { bookId: bookId, cartId: cart.Id }, "json", function (data) {
+                    alert('какашка');
+                });
+            });
+        });
+    </script>
+}
+    
