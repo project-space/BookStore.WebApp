@@ -2,12 +2,12 @@
 
 <ul id="menu">
     <li>
-        @Html.RouteLink("BookStore", new { controller = "Home", action = "Index"})
-    </li> 
+        @Html.RouteLink("BookStore", new { controller = "Home", action = "Index" })
+    </li>
     <li>
         <a id="show" href="#">Жанры</a>
         <ul id="genres">
-            @foreach(var genre in Model)
+            @foreach (var genre in Model)
             {
                 <li>
                     @Html.RouteLink($"{genre.Name}", new { controller = "Genre", action = "Index", id = genre.Id })
@@ -15,5 +15,11 @@
             }
         </ul>
     </li>
-                
+
+    <li id="cart">
+
+    </li>
 </ul>
+
+
+
