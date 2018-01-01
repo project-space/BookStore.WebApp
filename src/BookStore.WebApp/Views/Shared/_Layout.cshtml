@@ -11,6 +11,7 @@
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             @{ Html.RenderAction("Index", "Menu"); }
+
         </div>
     </div>
     <div class="container body-content">
@@ -23,21 +24,9 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+
+    @Scripts.Render("~/bundles/menu")
     @RenderSection("scripts", required: false)
-    <script>
-     
-        if (getCookie("cart").length == 0) {
-            $.get('/Cart/Get', function (data) {
-                document.cookie = "cart=" + JSON.stringify(data);
-            });
-        }
-
-
-        function getCookie(name) {
-            var r = document.cookie.match("(^|;) ?" + name + "=([^;]*)(;|$)");
-            if (r) return r[2];
-            else return "";
-        }
-    </script>
+    
 </body>
 </html>
