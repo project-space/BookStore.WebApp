@@ -1,9 +1,42 @@
-﻿@model List<BookStore.WebApp.Models.CartItem>
+﻿@model List<BookStore.WebApp.Models.Book>
 
-<span>Корзина</span>
-@foreach(var item in Model)
+<div>Корзина</div>
+@foreach (var book in Model)
 {
-    <div>
-        
+    <div class="section_content">
+        <a href="/BookPage/Index/@book.Id">
+
+            <div class="cover">
+                <img class="cover_image" src="@book.CoverUrl" />
+
+            </div>
+            <h3 class="title">@book.Title<br /> @book.Author</h3>
+            <div class="rating">
+                <img class="rating_icon" src="~/Content/images/star.png" />
+                <span class="score">@book.Rating</span>
+                <span class="price"> @book.Price р.</span>
+            </div>
+        </a>
+        <button class="btn"> Добавить книгу в корзину </button>  
+        <input id="bookId" type="hidden" value="@book.Id" />  
     </div>
+}
+@section scripts {
+    <script>
+        $(document).ready(function () {
+            $('.btn').click(function () {
+                var cart = JSON.parse($.cookie('cart'));
+                var bookId = $('#bookId').val();
+
+                $.ajax({
+                    url: '/CartItem/Delete',
+                    type: 'DELETE',
+                    arguments: { bookId: bookId, cartId: cart.Id },
+                    success: function (result) {
+                        alert("какашка");
+                    }
+                });
+            });
+        });
+    </script>
 }
