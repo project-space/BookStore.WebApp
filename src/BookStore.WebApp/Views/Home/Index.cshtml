@@ -7,17 +7,20 @@
     
     @foreach (var book in Model.Novelties)
     {
-        <div class="section_content">
-            <div class="cover">
-                <img class="cover_image" src="@book.CoverUrl" />
+        <a href="/BookPage/Index/@book.Id">
+            <div class="section_content">
+                <div class="cover">
+                    <img class="cover_image" src="@book.CoverUrl" />
+
+                </div>
+                <h3 class="title">@book.Title<br /> @book.Author</h3>
+                <div class="rating">
+                    <img class="rating_icon" src="~/Content/images/star.png" />
+                    <span class="score">@book.Rating</span>
+                    <span class="price"> @book.Price р.</span>
+                </div>
             </div>
-            <h3 class="title">@book.Title<br /> @book.Author</h3>
-            <div class="rating">
-                <img class="rating_icon" src="~/Content/images/star.png" />
-                <span class="score">@book.Rating</span>
-                <span class="price"> @book.Price р.</span>
-            </div>
-        </div>
+        </a>
     }
     
 </div>
@@ -25,16 +28,22 @@
 <div class="book_section row">
     <h2>ПОПУЛЯРНОЕ</h2>
     
-    @foreach (var book in Model.Popular)
-    {
-        <div class="section_content">
-            <ul class="book_info">
-                <li>"@book.Title" @book.Author</li>
-                <li>@book.Description</li>
-                <li>Цена: @book.Price</li>
-                <li>Рейтинг: @book.Rating</li>
-            </ul>
-        </div>
-    }
-            
+        @foreach (var book in Model.Popular)
+        {
+            <a href="/BookPage/Index/@book.Id">
+                <div class="section_content">
+                    <div class="cover">
+                        <img class="cover_image" src="@book.CoverUrl" />
+
+                    </div>
+                    <h3 class="title">@book.Title<br /> @book.Author</h3>
+                    <div class="rating">
+                        <img class="rating_icon" src="~/Content/images/star.png" />
+                        <span class="score">@book.Rating</span>
+                        <span class="price"> @book.Price р.</span>
+                    </div>
+                </div>
+            </a>
+         }
+
 </div>
