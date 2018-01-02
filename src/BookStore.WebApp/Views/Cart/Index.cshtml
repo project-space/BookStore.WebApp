@@ -1,4 +1,4 @@
-﻿@model List<BookStore.WebApp.Models.Book>
+﻿@model List<BookStore.WebApp.Models.BookInCart>
 
 <div>Корзина</div>
 @foreach (var book in Model)
@@ -17,21 +17,20 @@
                 <span class="price"> @book.Price р.</span>
             </div>
         </a>
-        <button class="btn"> Добавить книгу в корзину </button>  
-        <input id="bookId" type="hidden" value="@book.Id" />  
+        <button class="btn"> Удалить из корзины </button>  
+        <input id="itemId" type="hidden" value="@book.CartItemId" />  
     </div>
 }
 @section scripts {
     <script>
         $(document).ready(function () {
             $('.btn').click(function () {
-                var cart = JSON.parse($.cookie('cart'));
-                var bookId = $('#bookId').val();
+                var itemId = $('#itemId').val();
 
                 $.ajax({
                     url: '/CartItem/Delete',
                     type: 'DELETE',
-                    arguments: { bookId: bookId, cartId: cart.Id },
+                    arguments: { itemId: itemId},
                     success: function (result) {
                         alert("какашка");
                     }

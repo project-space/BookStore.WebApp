@@ -17,10 +17,9 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpDelete]
-        public void Delete(int cartId, int bookId)
+        public void Delete(int itemId)
         {
-            var item = CartItemMapper.Map(new CartItem { CartId = cartId, BookId = bookId });
-
+            cartItemClient.DeleteCartItem(itemId);
         }
     }
 }

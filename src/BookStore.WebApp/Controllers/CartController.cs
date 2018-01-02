@@ -26,7 +26,9 @@ namespace BookStore.WebApp.Controllers
             var cartItems = CartItemMapper.Map(cartItemClient.GetItems(id));
             var bookIds = cartItems.ConvertAll(item => item.BookId);
             var books = BookMapper.Map(booksClient.GetBooks(bookIds));
-            return View(books);
+            var model = BookMapper.Map(books,cartItems);
+            
+            return View(model);
         }
     }
 }
