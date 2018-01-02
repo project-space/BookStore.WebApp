@@ -15,5 +15,12 @@ namespace BookStore.WebApp.Controllers
             var item = CartItemMapper.Map(new CartItem { CartId = cartId, BookId = bookId});
             cartItemClient.AddCartItem(item);
         }
+
+        [HttpDelete]
+        public void Delete(int cartId, int bookId)
+        {
+            var item = CartItemMapper.Map(new CartItem { CartId = cartId, BookId = bookId });
+
+        }
     }
 }
