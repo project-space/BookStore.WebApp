@@ -193,6 +193,7 @@
     <Content Include="Views\Genre\Index.cshtml" />
     <Content Include="Views\BookPage\Index.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
+    <Content Include="Views\Cart\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

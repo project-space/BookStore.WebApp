@@ -17,7 +17,22 @@ namespace BookStore.WebApp.Mappers
             };
         }
 
+        public static Models.CartItem Map(Common.PurchaseServiceClient.Models.CartItem item)
+        {
+            return new Models.CartItem
+            {
+                Id = item.Id,
+                CartId = item.CartId,
+                BookId = item.BookId
+            };
+        }
+
         public static List<Common.PurchaseServiceClient.Models.CartItem> Map(List<Models.CartItem> items)
+        {
+            return items.ConvertAll(Map);
+        }
+
+        public static List<Models.CartItem> Map(List<Common.PurchaseServiceClient.Models.CartItem> items)
         {
             return items.ConvertAll(Map);
         }
