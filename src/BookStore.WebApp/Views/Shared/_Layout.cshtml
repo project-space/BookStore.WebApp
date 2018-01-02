@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-header navbar-inverse navbar-fixed-top">
         <div class="container">
             @{ Html.RenderAction("Index", "Menu"); }
 
@@ -24,7 +24,6 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-
     @Scripts.Render("~/bundles/menu")
     @RenderSection("scripts", required: false)
     
