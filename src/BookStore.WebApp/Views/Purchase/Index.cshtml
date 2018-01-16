@@ -1,0 +1,31 @@
+﻿<form method="post" id="purchase_details_form" action="javascript:void(null)" onsubmit="call()">
+    <legend>Оформление заказа</legend>
+    <span>ФИО:</span><input type="text" name="FullName"/>
+    <span>Почтовый индекс:</span><input type="text" name="Postcode"/>
+    <span>Страна:</span><input type="text" name="Country"/>
+    <span>Город:</span><input type="text" name="City"/>
+    <span>Улица:</span><input type="text" name="Street"/>
+    <span>Дом:</span><input type="text" name="House"/>
+    <span>Квартира:</span><input type="text" name="Apartment"/>
+    <span>Номер телефона:</span><input type="text" name="PhoneNumber"/>
+    <button type="submit">Отправить</button>
+</form>
+
+@section scripts{
+<script>
+        function call() {
+            var purchaseDetails = $('#purchase_details_form').serialize();
+            var books = localStorage.getItem('bookIds');
+            $.ajax({
+                type: 'POST',
+                url: '/Purchase/Checkout',
+                data: {purchaseDetails, books},
+                success: function (data) {
+                },
+                error: function (xhr, str) {
+                    alert('Возникла ошибка: ' + xhr.responseCode);
+                }
+            });
+        }
+</script>
+}

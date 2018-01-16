@@ -3,12 +3,10 @@
 <div>Корзина</div>
 @foreach (var book in Model)
 {
-    <div class="section_content">
+    <div class="section_content" id="@book.CartItemId">
         <a href="/BookPage/Index/@book.Id">
-
             <div class="cover">
                 <img class="cover_image" src="@book.CoverUrl" />
-
             </div>
             <h3 class="title">@book.Title<br /> @book.Author</h3>
             <div class="rating">
@@ -17,25 +15,38 @@
                 <span class="price"> @book.Price р.</span>
             </div>
         </a>
-        <button class="btn"> Удалить из корзины </button>  
+        <button class="del_btn">Удалить из корзины</button>
         <input id="itemId" type="hidden" value="@book.CartItemId" />  
+        <input type="hidden" name="bookId" value="@book.Id" />
     </div>
 }
+
+@Html.RouteLink("Оформить заказ", new { controller = "Purchase", action = "Index" });
+
 @section scripts {
     <script>
-        $(document).ready(function () {
-            $('.btn').click(function () {
-                var itemId = $('#itemId').val();
 
+        $(document).ready(function () {
+            $('.del_btn').click(function () {
+                var itemId = $('#itemId').val();
+                var selector = '#' + `${itemId}`;
                 $.ajax({
-                    url: '/CartItem/Delete',
+                    url: '/CartItem/Delete/', data: { itemId: itemId },
                     type: 'DELETE',
-                    arguments: { itemId: itemId},
                     success: function (result) {
-                        alert("какашка");
+                        $(selector).detach(selector);
                     }
                 });
             });
+            myStorage = localStorage;
+            var a = document.getElementsByName('bookId');
+            alert(JSON.stringify(a));
+            var bookIds = [];
+            for (i = 0; i < a.length; ++i) {
+                var bookId = a[i].getAttribute('value');
+                bookIds.push(bookId);
+            }
+            myStorage.setItem('bookIds', JSON.stringify(bookIds));
         });
     </script>
 }
