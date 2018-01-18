@@ -30,6 +30,8 @@ namespace BookStore.WebApp
                       "~/Content/site.css"));
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                 "~/Scripts/Menu.js"));
+            bundles.Add(new ScriptBundle("~/bundles/shim").Include(
+                "~/Scripts/es5-shim.js"));
         }
     }
 }
