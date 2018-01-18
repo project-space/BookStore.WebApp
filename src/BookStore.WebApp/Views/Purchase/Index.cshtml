@@ -13,13 +13,19 @@
 
 @section scripts{
 <script>
-        function call() {
-            var purchaseDetails = $('#purchase_details_form').serialize();
-            var books = localStorage.getItem('bookIds');
+    function call() {
+        var details = {};
+            var purchaseDetails = $('#purchase_details_form').serializeArray().map(function (x) {
+                details[x.name] = x.value;
+            });
+            var ids = JSON.parse(localStorage.getItem('bookIds'));
+            var bookIds = { bookIds: ids };
+            var order = Object.assign(bookIds,details);
+            
             $.ajax({
                 type: 'POST',
                 url: '/Purchase/Checkout',
-                data: {purchaseDetails, books},
+                data: order,
                 success: function (data) {
                 },
                 error: function (xhr, str) {
