@@ -1,14 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using BookStore.WebApp.Models;
+using BookStore.Common.PurchaseServiceClient;
+using BookStore.WebApp.Mappers;
 
 namespace BookStore.WebApp.Controllers
 {
     public class PurchaseController : Controller
     {
+
+        private static PurchaseClient purchaseClient = new PurchaseClient();
+
         [HttpGet]
         public ViewResult Index()
         {
@@ -18,7 +19,7 @@ namespace BookStore.WebApp.Controllers
         [HttpPost]
         public void Checkout(Order order)
         {
-
+            purchaseClient.CreatePurchase(OrderMapper.Map(order));
         }
     }
 }

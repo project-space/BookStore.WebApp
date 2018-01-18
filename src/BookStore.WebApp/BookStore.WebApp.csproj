@@ -146,6 +146,7 @@
     <Compile Include="Mappers\CartItemMapper.cs" />
     <Compile Include="Mappers\CartMapper.cs" />
     <Compile Include="Mappers\GenreMapper.cs" />
+    <Compile Include="Mappers\OrderMapper.cs" />
     <Compile Include="Models\Book.cs" />
     <Compile Include="Models\BookInCart.cs" />
     <Compile Include="Models\Cart.cs" />
@@ -168,6 +169,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\es5-shim.js" />
     <Content Include="Scripts\Menu.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
