@@ -19,8 +19,10 @@
                 details[x.name] = x.value;
             });
             var ids = JSON.parse(localStorage.getItem('bookIds'));
+            var cart = JSON.parse($.cookie('cart'));
+            var guestId = { GuestId: cart.GuestId }
             var bookIds = { bookIds: ids };
-            var order = Object.assign(bookIds,details);
+            var order = Object.assign(bookIds,details, guestId);
             
             $.ajax({
                 type: 'POST',
