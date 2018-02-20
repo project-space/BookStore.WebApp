@@ -4,7 +4,7 @@ namespace BookStore.WebApp.Mappers
 {
     public class GenreMapper
     {
-        public static Models.Genre Map(Common.BookServiceClient.Models.Genre genre)
+        public static Models.Genre Map(Common.ApiClients.Design.Models.Genre genre)
         {
             return new Models.Genre
             {
@@ -15,7 +15,7 @@ namespace BookStore.WebApp.Mappers
             };
         }
 
-        public static List<Models.Genre> Map(List<Common.BookServiceClient.Models.Genre> genres)
+        public static List<Models.Genre> Map(List<Common.ApiClients.Design.Models.Genre> genres)
         {
             return genres.ConvertAll(Map);
         }

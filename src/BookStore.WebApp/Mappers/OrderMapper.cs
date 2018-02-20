@@ -1,17 +1,12 @@
-﻿using BookStore.Common.PurchaseServiceClient.Models;
-using BookStore.WebApp.Models;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace BookStore.WebApp.Mappers
 {
     public class OrderMapper
     {
-        public static Common.PurchaseServiceClient.Models.Order Map(Models.Order order)
+        public static Common.ApiClients.Design.Models.Order Map(Models.Order order)
         {
-            return new Common.PurchaseServiceClient.Models.Order
+            return new Common.ApiClients.Design.Models.Order
             {
                 Id = order.Id,
                 AccountId = order.AccountId,
@@ -28,7 +23,7 @@ namespace BookStore.WebApp.Mappers
             };
         }
 
-        public static List<Common.PurchaseServiceClient.Models.Order> Map(List<Models.Order> orders)
+        public static List<Common.ApiClients.Design.Models.Order> Map(List<Models.Order> orders)
         {
             return orders.ConvertAll(Map);
         }

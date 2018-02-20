@@ -1,14 +1,18 @@
 ﻿using System.Web.Mvc;
 using BookStore.WebApp.Models;
-using BookStore.Common.PurchaseServiceClient;
 using BookStore.WebApp.Mappers;
+using BookStore.Common.ApiClients.Design.Abstractions.PurchaseServiceClient;
 
 namespace BookStore.WebApp.Controllers
 {
     public class PurchaseController : Controller
     {
+        private readonly IPurchaseClient purchaseClient;
 
-        private static PurchaseClient purchaseClient = new PurchaseClient();
+        public PurchaseController(IPurchaseClient purchaseClient)
+        {
+            this.purchaseClient = purchaseClient;
+        }
 
         [HttpGet]
         public ViewResult Index()
@@ -17,9 +21,9 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpPost]
-        public void Checkout(Order order)
+        public void CheckoutAsync(Order order)
         {
-            purchaseClient.CreatePurchase(OrderMapper.Map(order));
+            int orderId = purchaseClient.CreatePurchase(OrderMapper.Map(order)).Result;
         }
     }
 }

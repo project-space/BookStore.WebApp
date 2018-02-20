@@ -2,21 +2,26 @@
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Net.Http;
-using BookStore.Common.BookServiceClient;
 using System.Web.Mvc;
 using BookStore.WebApp.Mappers;
+using BookStore.Common.ApiClients.Design.Abstractions.BookServiceClient;
 
 namespace BookStore.WebApp.Controllers
 {
     public class HomeController : Controller
     {
-        static BooksClient booksClient = new BooksClient();
+        private readonly IBooksClient booksClient;
+
+        public HomeController(IBooksClient booksClient)
+        {
+            this.booksClient = booksClient;
+        }
 
         [HttpGet]
         public ActionResult Index()
         {
-            var novelties = BookMapper.Map(booksClient.GetBooks("novelties"));
-            var popular = BookMapper.Map(booksClient.GetBooks("popular"));
+            var novelties = BookMapper.Map(booksClient.GetNovelties().Result);
+            var popular = BookMapper.Map(booksClient.GetPopular().Result);
 
             var model = new MainContentModel { Novelties = novelties, Popular = popular};
             

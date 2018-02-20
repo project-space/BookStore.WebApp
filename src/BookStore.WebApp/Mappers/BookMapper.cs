@@ -8,7 +8,7 @@ namespace BookStore.WebApp.Mappers
 {
     public class BookMapper
     {
-        public static Book Map(Common.BookServiceClient.Models.Book book)
+        public static Book Map(Common.ApiClients.Design.Models.Book book)
         {
             return new Book
             {
@@ -55,7 +55,7 @@ namespace BookStore.WebApp.Mappers
             return booksInCart;
         }
 
-        public static List<Book> Map(List<Common.BookServiceClient.Models.Book> books)
+        public static List<Book> Map(List<Common.ApiClients.Design.Models.Book> books)
         {
             return books.ConvertAll(Map);
         }

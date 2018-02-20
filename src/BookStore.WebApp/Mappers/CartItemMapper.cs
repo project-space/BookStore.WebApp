@@ -7,9 +7,9 @@ namespace BookStore.WebApp.Mappers
 {
     public class CartItemMapper
     {
-        public static Common.PurchaseServiceClient.Models.CartItem Map(Models.CartItem item)
+        public static Common.ApiClients.Design.Models.CartItem Map(Models.CartItem item)
         {
-            return new Common.PurchaseServiceClient.Models.CartItem
+            return new Common.ApiClients.Design.Models.CartItem
             {
                 Id = item.Id,
                 CartId = item.CartId,
@@ -17,7 +17,7 @@ namespace BookStore.WebApp.Mappers
             };
         }
 
-        public static Models.CartItem Map(Common.PurchaseServiceClient.Models.CartItem item)
+        public static Models.CartItem Map(Common.ApiClients.Design.Models.CartItem item)
         {
             return new Models.CartItem
             {
@@ -27,12 +27,12 @@ namespace BookStore.WebApp.Mappers
             };
         }
 
-        public static List<Common.PurchaseServiceClient.Models.CartItem> Map(List<Models.CartItem> items)
+        public static List<Common.ApiClients.Design.Models.CartItem> Map(List<Models.CartItem> items)
         {
             return items.ConvertAll(Map);
         }
 
-        public static List<Models.CartItem> Map(List<Common.PurchaseServiceClient.Models.CartItem> items)
+        public static List<Models.CartItem> Map(List<Common.ApiClients.Design.Models.CartItem> items)
         {
             return items.ConvertAll(Map);
         }

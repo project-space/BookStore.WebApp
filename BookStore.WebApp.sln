@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2024
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{8D901A9E-3D55-4C85-A1C8-3118CA2EEF5E}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Common.BookServiceClient", "submodules\BookStore.Common\src\ApiClients\BookStore.Common.BookServiceClient\BookStore.Common.BookServiceClient.csproj", "{A46275E3-5BBB-4B38-83B3-843B2F7003B8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Common.PurchaseServiceClient", "submodules\BookStore.Common\src\ApiClients\BookStore.Common.PurchaseServiceClient\BookStore.Common.PurchaseServiceClient.csproj", "{6E4BC741-2365-4165-884C-B3E17A15130F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Common.ApiClients.Design", "submodules\BookStore.Common\src\ApiClients\BookStore.Common.ApiClients.Design\BookStore.Common.ApiClients.Design.csproj", "{B4E4344A-996A-4994-BA4A-EFB2AD8F6982}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Common.HttpRequestExecutor.Design", "submodules\BookStore.Common\src\HttpRequestsExecutor\BookStore.Common.HttpRequestExecutor.Design\BookStore.Common.HttpRequestExecutor.Design.csproj", "{CC0D1E91-59BB-45A3-B339-CA23152253F7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BookStore.Common.HttpRequestExecutor", "submodules\BookStore.Common\src\HttpRequestsExecutor\BookStore.Common.HttpRequestExecutor\BookStore.Common.HttpRequestExecutor.csproj", "{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +37,18 @@ Global
 		{6E4BC741-2365-4165-884C-B3E17A15130F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6E4BC741-2365-4165-884C-B3E17A15130F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6E4BC741-2365-4165-884C-B3E17A15130F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B4E4344A-996A-4994-BA4A-EFB2AD8F6982}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B4E4344A-996A-4994-BA4A-EFB2AD8F6982}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B4E4344A-996A-4994-BA4A-EFB2AD8F6982}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B4E4344A-996A-4994-BA4A-EFB2AD8F6982}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC0D1E91-59BB-45A3-B339-CA23152253F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC0D1E91-59BB-45A3-B339-CA23152253F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC0D1E91-59BB-45A3-B339-CA23152253F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC0D1E91-59BB-45A3-B339-CA23152253F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,5 +57,11 @@ Global
 		{EA069F40-ACD6-4114-ACB6-55FA7811968A} = {8D901A9E-3D55-4C85-A1C8-3118CA2EEF5E}
 		{A46275E3-5BBB-4B38-83B3-843B2F7003B8} = {5BA470E2-B9BB-433E-BC5F-C25C57023A70}
 		{6E4BC741-2365-4165-884C-B3E17A15130F} = {5BA470E2-B9BB-433E-BC5F-C25C57023A70}
+		{B4E4344A-996A-4994-BA4A-EFB2AD8F6982} = {5BA470E2-B9BB-433E-BC5F-C25C57023A70}
+		{CC0D1E91-59BB-45A3-B339-CA23152253F7} = {5BA470E2-B9BB-433E-BC5F-C25C57023A70}
+		{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7} = {5BA470E2-B9BB-433E-BC5F-C25C57023A70}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {68DB8DF5-0688-473F-A647-C1C55F5A0F91}
 	EndGlobalSection
 EndGlobal

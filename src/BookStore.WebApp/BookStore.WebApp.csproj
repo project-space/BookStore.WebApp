@@ -15,7 +15,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>BookStore.WebApp</RootNamespace>
     <AssemblyName>BookStore.WebApp</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -25,6 +25,8 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -44,6 +46,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="LightInject, Version=5.1.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.5.1.2\lib\net46\LightInject.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Mvc, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.Mvc.2.0.0\lib\net46\LightInject.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="LightInject.Web, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\LightInject.Web.2.0.0\lib\net46\LightInject.Web.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
       <Private>True</Private>
@@ -55,6 +66,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
@@ -64,8 +76,7 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Http, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
       <Private>True</Private>
@@ -74,9 +85,7 @@
       <HintPath>..\..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Web" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
@@ -118,6 +127,7 @@
       <Private>True</Private>
       <HintPath>..\..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Xml.Linq" />
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\..\packages\WebGrease.1.5.2\lib\WebGrease.dll</HintPath>
@@ -217,13 +227,25 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.ApiClients.Design\BookStore.Common.ApiClients.Design.csproj">
+      <Project>{b4e4344a-996a-4994-ba4a-efb2ad8f6982}</Project>
+      <Name>BookStore.Common.ApiClients.Design</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.BookServiceClient\BookStore.Common.BookServiceClient.csproj">
       <Project>{a46275e3-5bbb-4b38-83b3-843b2f7003b8}</Project>
       <Name>BookStore.Common.BookServiceClient</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\submodules\BookStore.Common\src\ApiClients\BookStore.Common.PurchaseServiceClient\BookStore.Common.PurchaseServiceClient.csproj">
-      <Project>{6E4BC741-2365-4165-884C-B3E17A15130F}</Project>
+      <Project>{6e4bc741-2365-4165-884c-b3e17a15130f}</Project>
       <Name>BookStore.Common.PurchaseServiceClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\BookStore.Common\src\HttpRequestsExecutor\BookStore.Common.HttpRequestExecutor.Design\BookStore.Common.HttpRequestExecutor.Design.csproj">
+      <Project>{cc0d1e91-59bb-45a3-b339-ca23152253f7}</Project>
+      <Name>BookStore.Common.HttpRequestExecutor.Design</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\submodules\BookStore.Common\src\HttpRequestsExecutor\BookStore.Common.HttpRequestExecutor\BookStore.Common.HttpRequestExecutor.csproj">
+      <Project>{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}</Project>
+      <Name>BookStore.Common.HttpRequestExecutor</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

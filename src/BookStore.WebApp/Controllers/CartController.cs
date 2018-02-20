@@ -1,5 +1,5 @@
-﻿using BookStore.Common.BookServiceClient;
-using BookStore.Common.PurchaseServiceClient;
+﻿using BookStore.Common.ApiClients.Design.Abstractions.BookServiceClient;
+using BookStore.Common.ApiClients.Design.Abstractions.PurchaseServiceClient;
 using BookStore.WebApp.Mappers;
 using BookStore.WebApp.Models;
 using System.Collections.Generic;
@@ -10,22 +10,22 @@ namespace BookStore.WebApp.Controllers
 {
     public class CartController : Controller
     {
-        static CartsClient cartsClient = new CartsClient();
-        static CartItemClient cartItemClient = new CartItemClient();
-        static BooksClient booksClient = new BooksClient();
+        private readonly ICartsClient cartsClient;
+        private readonly IBooksClient booksClient;
+        private readonly ICartItemClient cartItemClient;
 
         [HttpGet]
         public JsonResult Get()
         {
-            return Json(CartMapper.Map(cartsClient.GetCart()), JsonRequestBehavior.AllowGet);
+            return Json(CartMapper.Map(cartsClient.GetCart().Result), JsonRequestBehavior.AllowGet);
         }
 
         [HttpGet]
         public ViewResult Index(int id)
         {
-            var cartItems = CartItemMapper.Map(cartItemClient.GetItems(id));
+            var cartItems = CartItemMapper.Map(cartItemClient.GetItems(id).Result);
             var bookIds = cartItems.ConvertAll(item => item.BookId);
-            var books = BookMapper.Map(booksClient.GetBooks(bookIds));
+            var books = BookMapper.Map(booksClient.GetBooks(bookIds).Result);
             var model = BookMapper.Map(books,cartItems);
             
             return View(model);
