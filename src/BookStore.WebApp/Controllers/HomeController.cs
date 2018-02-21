@@ -21,11 +21,12 @@ namespace BookStore.WebApp.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            var novelties = BookMapper.Map(await booksClient.GetNovelties());
-            var popular = BookMapper.Map(await booksClient.GetPopular());
-
-            var model = new MainContentModel { Novelties = novelties, Popular = popular};
             
+            var novelties = BookMapper.Map(await booksClient.GetNovelties().ConfigureAwait(false));
+            var popular = BookMapper.Map(await booksClient.GetPopular().ConfigureAwait(false));
+            
+            var model = new MainContentModel { Novelties = novelties, Popular = popular };
+
             return View(model);
         }
 
