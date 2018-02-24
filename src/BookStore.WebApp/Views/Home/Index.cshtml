@@ -2,48 +2,68 @@
 @{
     ViewBag.Title = "Books";
 }
+
+
+
 <div class="book_section row">
     <h2>НОВОЕ</h2>
-    
-    @foreach (var book in Model.Novelties)
-    {
+    <div class=" row">
+        @foreach (var book in Model.Novelties)
+        {
         <a href="/BookPage/Index/@book.Id">
-            <div class="section_content">
-                <div class="cover">
-                    <img class="cover_image" src="@book.CoverUrl" />
+            <div class="col-md-3">
+                <div class="thumbnail book-preview">
+                    <img src="~/Content/images/cover.jpg" alt="...">
+                    <div class="caption">
 
-                </div>
-                <h3 class="title">@book.Title<br /> @book.Author</h3>
-                <div class="rating">
-                    <img class="rating_icon" src="~/Content/images/star.png" />
-                    <span class="score">@book.Rating</span>
-                    <span class="price"> @book.Price р.</span>
+                        <h6 class="title">@book.Title<br /> @book.Author</h6>
+                        <div class="info">
+                            <div>
+                                <span class="score">@book.Rating</span>
+                                <span class="glyphicon glyphicon-star star"></span><br />
+                                <span class="price"> @book.Price р.</span>
+                            </div>
+                            <div class="cart-link">
+                                <span class="glyphicon glyphicon-shopping-cart "></span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </a>
-    }
-    
+        }
+    </div>
 </div>
 <hr />
 <div class="book_section row">
     <h2>ПОПУЛЯРНОЕ</h2>
-    
+    <div class="row">
         @foreach (var book in Model.Popular)
         {
-            <a href="/BookPage/Index/@book.Id">
-                <div class="section_content">
-                    <div class="cover">
-                        <img class="cover_image" src="@book.CoverUrl" />
 
-                    </div>
-                    <h3 class="title">@book.Title<br /> @book.Author</h3>
-                    <div class="rating">
-                        <img class="rating_icon" src="~/Content/images/star.png" />
-                        <span class="score">@book.Rating</span>
-                        <span class="price"> @book.Price р.</span>
+        <a href="/BookPage/Index/@book.Id">
+            <div class="col-sm-4 col-md-2">
+                <div class="thumbnail book-preview">
+                    <img class="cover_image" src="~/Content/images/cover.jpg" alt="...">
+                    <div class="caption">
+
+                        <h6 class="title">@book.Title<br /> @book.Author</h6>
+                        <div class="info">
+                            <div>
+                                <span class="score">@book.Rating</span>
+                                <span class="glyphicon glyphicon-star star"></span><br />
+                                <span class="price"> @book.Price р.</span>
+                            </div>
+                            <div class="cart-link">
+                                <span class="glyphicon glyphicon-shopping-cart "></span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </a>
-         }
+            </div>
+        </a>
+
+        }
+    </div>
 
 </div>

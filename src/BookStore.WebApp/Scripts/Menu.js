@@ -2,10 +2,15 @@
     if ($.cookie('cart') == null) {
         $.get('/Cart/Get', function (data) {
             $.cookie('cart', JSON.stringify(data));
-            $('<a>', { href: '/Cart/Index/' + data.Id, text: 'Корзина' }).appendTo('#cart');
-        });
+
+            var link = $('<a>', { href: '/Cart/Index/' + data.Id });
+            $('<span>', { class: 'glyphicon glyphicon-shopping-cart' }).appendTo(link);
+            link.appendTo('#cart');        });
     } else {
         var cart = JSON.parse($.cookie('cart'));
-        $('<a>', { href: '/Cart/Index/' + cart.Id, text: 'Корзина' }).appendTo('#cart');
+
+        var link = $('<a>', { href: '/Cart/Index/' + cart.Id });
+        $('<span>', { class: 'glyphicon glyphicon-shopping-cart' }).appendTo(link);
+        link.appendTo('#cart');
     }
 });

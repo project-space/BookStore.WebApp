@@ -2,6 +2,7 @@
 using System.Web.Mvc;
 using BookStore.WebApp.Mappers;
 using BookStore.Common.ApiClients.Design.Abstractions.BookServiceClient;
+using System.Threading.Tasks;
 
 namespace BookStore.WebApp.Controllers
 {
@@ -15,9 +16,9 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpGet]
-        public ActionResult Index(int id)
+        public async Task<ActionResult> Index(int id)
         {
-            Book book = BookMapper.Map(booksClient.GetBook(id).Result);
+            Book book = BookMapper.Map(await booksClient.GetBook(id).ConfigureAwait(false));
             return View(book);
         }     
     }

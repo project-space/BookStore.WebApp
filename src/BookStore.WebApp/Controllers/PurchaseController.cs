@@ -21,9 +21,9 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpPost]
-        public void CheckoutAsync(Order order)
+        public async void CheckoutAsync(Order order)
         {
-            int orderId = purchaseClient.CreatePurchase(OrderMapper.Map(order)).Result;
+            int orderId = await purchaseClient.CreatePurchase(OrderMapper.Map(order)).ConfigureAwait(false);
         }
     }
 }

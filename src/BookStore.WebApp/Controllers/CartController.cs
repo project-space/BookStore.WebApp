@@ -14,6 +14,13 @@ namespace BookStore.WebApp.Controllers
         private readonly IBooksClient booksClient;
         private readonly ICartItemClient cartItemClient;
 
+        public CartController(ICartItemClient cartItemClient, ICartsClient cartsClient, IBooksClient booksClient)
+        {
+            this.cartsClient = cartsClient;
+            this.booksClient = booksClient;
+            this.cartItemClient = cartItemClient;
+        }
+
         [HttpGet]
         public JsonResult Get()
         {

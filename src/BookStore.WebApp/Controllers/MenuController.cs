@@ -17,9 +17,9 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult> Index()
+        public  ActionResult Index()
         {
-            var model = GenreMapper.Map(await genresClient.GetGenres().ConfigureAwait(false));
+            var model = GenreMapper.Map(genresClient.GetGenres().Result);
              
             return PartialView(model);
         }

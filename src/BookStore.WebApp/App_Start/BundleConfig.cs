@@ -10,7 +10,10 @@ namespace BookStore.WebApp
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.cookie.js"));
+                        "~/Scripts/jquery.cookie.js",
+                        "~/Scripts/jquery.jcarousel.js",
+                        "~/Scripts/carousel.js"
+                        ));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -25,9 +28,13 @@ namespace BookStore.WebApp
                       "~/Scripts/respond.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/menu.css",
                       "~/Content/bootstrap.css",
-                      "~/Content/site.css"));
+                      "~/Content/style.css",
+                      "~/Content/puritan.css",
+                      "~/Content/bootstrap-grid.css",
+                      "~/Content/bootstrap-reboot.css",
+                      "~/Content/Site.css",
+                      "~/Content/menu.css"));
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                 "~/Scripts/Menu.js"));
             bundles.Add(new ScriptBundle("~/bundles/shim").Include(

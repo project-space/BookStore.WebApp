@@ -8,12 +8,11 @@
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-    <div class="navbar navbar-header navbar-inverse navbar-fixed-top">
-        <div class="container">
-            @{Html.RenderAction("Index", "Menu");}
+    <header>
 
-        </div>
-    </div>
+        @{Html.RenderAction("Index", "Menu");}
+
+    </header>
     <div class="container body-content">
         @RenderBody()
         <hr />
@@ -27,6 +26,6 @@
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/menu")
     @RenderSection("scripts", required: false)
-    
+
 </body>
 </html>

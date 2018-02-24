@@ -1,7 +1,4 @@
 ﻿using BookStore.WebApp.Models;
-using Newtonsoft.Json;
-using System.Collections.Generic;
-using System.Net.Http;
 using System.Web.Mvc;
 using BookStore.WebApp.Mappers;
 using BookStore.Common.ApiClients.Design.Abstractions.BookServiceClient;
@@ -21,7 +18,6 @@ namespace BookStore.WebApp.Controllers
         [HttpGet]
         public async Task<ActionResult> Index()
         {
-            
             var novelties = BookMapper.Map(await booksClient.GetNovelties().ConfigureAwait(false));
             var popular = BookMapper.Map(await booksClient.GetPopular().ConfigureAwait(false));
             

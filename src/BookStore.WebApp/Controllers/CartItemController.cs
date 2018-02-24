@@ -1,6 +1,7 @@
 ﻿using BookStore.Common.ApiClients.Design.Abstractions.PurchaseServiceClient;
 using BookStore.WebApp.Mappers;
 using BookStore.WebApp.Models;
+using System.Threading.Tasks;
 using System.Web.Mvc;
 
 namespace BookStore.WebApp.Controllers
@@ -15,13 +16,13 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpPost]
-        public void Add(int cartId, int bookId)
+        public async void Add(int cartId, int bookId)
         {
             var item = CartItemMapper.Map(new CartItem { CartId = cartId, BookId = bookId});
-            int id = cartItemClient.AddCartItem(item).Result;
+            int id = await cartItemClient.AddCartItem(item).ConfigureAwait(false);
         }
 
         [HttpDelete]
-        public void Delete(int itemId) => cartItemClient.DeleteCartItem(itemId);
+        public async Task Delete(int itemId) => await cartItemClient.DeleteCartItem(itemId).ConfigureAwait(false);
     }
 }
