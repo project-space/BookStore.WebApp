@@ -10,10 +10,11 @@ namespace BookStore.WebApp
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.cookie.js",
-                        "~/Scripts/jquery.jcarousel.js",
-                        "~/Scripts/carousel.js"
+                        "~/Scripts/jquery.cookie.js"
                         ));
+
+            bundles.Add(new StyleBundle("~/Content/BookPage").Include(
+                        "~/Content/BookPage.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -24,21 +25,29 @@ namespace BookStore.WebApp
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
-                      "~/Scripts/bootstrap.js",
-                      "~/Scripts/respond.js"));
+                        "~/Scripts/bootstrap.js",
+                        "~/Scripts/respond.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
-                      "~/Content/bootstrap.css",
-                      "~/Content/style.css",
-                      "~/Content/puritan.css",
-                      "~/Content/bootstrap-grid.css",
-                      "~/Content/bootstrap-reboot.css",
-                      "~/Content/Site.css",
-                      "~/Content/menu.css"));
+            bundles.Add(new StyleBundle("~/Content/bootstrap").Include(
+                        "~/Content/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/site").Include(
+                        "~/Content/Site.css"));
+
+            bundles.Add(new StyleBundle("~/Content/Menu").Include(
+                        "~/Content/menu.css"));
+
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
-                "~/Scripts/Menu.js"));
+                        "~/Scripts/Menu.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/BookPage").Include(
+                       "~/Scripts/BookPage.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/Cart").Include(
+                       "~/Scripts/Cart.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/shim").Include(
-                "~/Scripts/es5-shim.js"));
+                        "~/Scripts/es5-shim.js"));
         }
     }
 }

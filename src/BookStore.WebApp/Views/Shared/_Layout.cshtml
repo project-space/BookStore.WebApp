@@ -3,8 +3,9 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title</title>
-    @Styles.Render("~/Content/css")
+    <title>Books</title>
+    @Styles.Render("~/Content/bootstrap")
+    @Styles.Render("~/Content/site")
     @Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
@@ -25,7 +26,7 @@
     @Scripts.Render("~/bundles/shim")
     @Scripts.Render("~/bundles/bootstrap")
     @Scripts.Render("~/bundles/menu")
-    @RenderSection("scripts", required: false)
-
+    @Scripts.Render("~/bundles/BookPage")
+    @Scripts.Render("~/bundles/Cart")
 </body>
 </html>

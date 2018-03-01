@@ -21,7 +21,7 @@
                             <div>
                                 <span class="score">@book.Rating</span>
                                 <span class="glyphicon glyphicon-star star"></span><br />
-                                <span class="price"> @book.Price р.</span>
+                                <span class="price label label-success"> @book.Price р.</span>
                             </div>
                             <div class="cart-link">
                                 <span class="glyphicon glyphicon-shopping-cart "></span>
@@ -37,14 +37,13 @@
 <hr />
 <div class="book_section row">
     <h2>ПОПУЛЯРНОЕ</h2>
-    <div class="row">
-        @foreach (var book in Model.Popular)
+    <div class=" row">
+        @foreach (var book in Model.Novelties)
         {
-
         <a href="/BookPage/Index/@book.Id">
-            <div class="col-sm-4 col-md-2">
+            <div class="col-md-3">
                 <div class="thumbnail book-preview">
-                    <img class="cover_image" src="~/Content/images/cover.jpg" alt="...">
+                    <img src="~/Content/images/cover.jpg" alt="...">
                     <div class="caption">
 
                         <h6 class="title">@book.Title<br /> @book.Author</h6>
@@ -52,7 +51,7 @@
                             <div>
                                 <span class="score">@book.Rating</span>
                                 <span class="glyphicon glyphicon-star star"></span><br />
-                                <span class="price"> @book.Price р.</span>
+                                <span class="price label label-success"> @book.Price р.</span>
                             </div>
                             <div class="cart-link">
                                 <span class="glyphicon glyphicon-shopping-cart "></span>
@@ -62,7 +61,6 @@
                 </div>
             </div>
         </a>
-
         }
     </div>
 

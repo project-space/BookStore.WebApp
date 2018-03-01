@@ -16,10 +16,10 @@ namespace BookStore.WebApp.Controllers
         }
 
         [HttpPost]
-        public async void Add(int cartId, int bookId)
+        public async Task Add(int cartId, int bookId)
         {
             var item = CartItemMapper.Map(new CartItem { CartId = cartId, BookId = bookId});
-            int id = await cartItemClient.AddCartItem(item).ConfigureAwait(false);
+            int id = await cartItemClient.AddCartItem(item);
         }
 
         [HttpDelete]

@@ -7,9 +7,7 @@
     padding-left: 15px;
     padding-right: 15px;
 }
-.nav-item{
-    display:inline-block
-}
+
 .short_description {
     overflow: hidden;
     text-overflow: ellipsis;
@@ -18,31 +16,43 @@
     font-style:italic;
     font-size: 8pt;
 }
+
 .section_content{
     display:inline-block;
      padding-right:10px;
     margin:5px;
 }
+
 .book-preview:hover {
-    background-color: #e6e6e6;
+    background-color: #bcfdf1;
 }
+
 .book_info{
     list-style: none;
 }
+
 .title{
     margin-top: 0px;
     font: bold 12pt arial;
 }
+
 .info{
     display:flex;
     justify-content:space-between;
 }
+
 .cart-link{
-    font-size: 30px;
     margin-right:15px;
 }
+.glyphicon-shopping-cart{
+    font-size: 30px;
+}
+
 .star{
-    font-size:12px;
+    font-size:18px;
+}
+.score {
+    font-size: 18px;
 }
 .cover_image{
     width:inherit;
@@ -50,6 +60,7 @@
     display:block;
     margin: 0px;
 }
+
 .description_content{
     font: 10pt arial;
 }

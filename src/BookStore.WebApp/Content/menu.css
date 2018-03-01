@@ -1,7 +1,27 @@
-﻿#cart{
+﻿
+.cart-link {
+    color: black !important;
     font-size: 20px;
 }
 #user {
+    color: black !important;
     font-size: 20px;
-    margin-right:10px;
+    margin-right: 10px;
 }
+
+.menu {
+    background: linear-gradient(#4fb4a7,#bdf9f1);
+}
+
+.logo {
+    color: black !important;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.genre-link {
+    color: black !important;
+    font-size: 17px;
+}
+
+

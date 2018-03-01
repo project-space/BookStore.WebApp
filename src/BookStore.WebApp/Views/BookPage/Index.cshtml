@@ -1,31 +1,35 @@
 ﻿@model BookStore.WebApp.Models.Book
-<div class="section_content">
-    <div class="cover">
-        <img class="cover_image" src="@Model.CoverUrl" />
+@Styles.Render("~/Content/BookPage")
+<div class="row">
+    <div class="col-lg-1"></div>
+    <div class="col-lg-4 img-thumbnail">
+            <img class="cover_image" src="~/Content/images/Volkodav.jpg" />         
     </div>
-    <h3 class="title">@Model.Title<br /> @Model.Author</h3>
-    <div class="rating">
-        <img class="rating_icon" src="~/Content/images/star.png" />
-        <span class="score">@Model.Rating</span> 
+
+    <div class="col-lg-7">
+        <div class="page-header">
+            <h1 class="BookTitle">@Model.Title<br/><small>@Model.Author</small></h1>
+            <div class="rating">
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="glyphicon glyphicon-star-empty"></span>
+                <span class="score">3.01</span>
+            </div>
+        </div>
+        <div class="description col-lg-7">
+            @Model.Description
+            <hr />
+        </div>
+        <div class="col-lg-5 buy-container">
+            <div class="thumbnail">
+                <div class="price">@Model.Price ₽</div>
+                <button id="cart-btn" class="cart_button">Добавить в корзину</button>
+            </div>
+        </div>
     </div>
-    <span class="price"> @Model.Price р.</span>
 </div>
+<input id="bookId" type="hidden" value="@Model.Id" />
 
-<button id="btn"> Добавить книгу в корзину </button>
-
-@section scripts {
-    <input id="bookId" type="hidden" value="@Model.Id" />
-    <script>
-        $(document).ready(function () {
-            $('#btn').click(function () {
-                var cart = JSON.parse($.cookie('cart'));
-                var bookId = $('#bookId').val();
-
-                $.post('/CartItem/Add', { bookId: bookId, cartId: cart.Id }, "json", function (data) {
-                    alert('какашка');
-                });
-            });
-        });
-    </script>
-}
     
