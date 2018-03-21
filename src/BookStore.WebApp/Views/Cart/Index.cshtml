@@ -1,29 +1,34 @@
 ﻿@model List<BookStore.WebApp.Models.BookInCart>
+    @Styles.Render("~/Content/Cart")
+               <div class="row">
+                   @foreach (var book in Model)
+                   {
+                   <div class="row" id="@book.CartItemId">
+                       <div>
+                           <div class="col col-lg-1"></div>
+                           <div class="cart-item col col-lg-10 thumbnail">
+                               <button class="del_btn"><span class="glyphicon glyphicon-remove"></span></button>
+                               <img class="cover col col-md-3" src="/Content/images/cover.jpg" alt="..." />
+                               <div class="caption col col-md-6">
+                                   <a href="/BookPage/Index/@book.Id">
+                                       <h4 class="title">@book.Title<br /> @book.Author</h4>
+                                   </a>
+                               </div>
+                               <div class="col-md-3 ">
+                                   <div class="thumbnail" id="buy-container">
+                                       <div id="price">@book.Price ₽</div>
+                                   </div>
+                               </div>
+                           </div>
+                           <div class="col col-lg-1"></div>
+                       </div>
+                       <input id="itemId" type="hidden" value="@book.CartItemId" />
+                       <input type="hidden" name="bookId" value="@book.Id" />
+                   </div>
+                   }
+                   <div class="col-lg-9"></div>
+                   <div class="col-lg-3"><button class="purchase_button"> @Html.RouteLink("Оформить заказ", new { controller = "Purchase", action = "Index"}) </button></div>
+                   
 
-<div>Корзина</div>
-<div class="row">
-    @foreach (var book in Model)
-    {
-    <div class="section_content col-lg-2" id="@book.CartItemId">
-        <button class="del_btn"><span class="glyphicon glyphicon-remove"></span></button>
+               </div>
 
-        
-            <div>
-                <div class="thumbnail book-preview">
-                        <img src="~/Content/images/cover.jpg" alt="...">
-                        <div class="caption">
-                            <a href="/BookPage/Index/@book.Id">
-
-                                <h6 class="title">@book.Title<br /> @book.Author</h6>
-                            </a>
-                        </div>
-                    
-                </div>
-            </div>
-       
-        <input id="itemId" type="hidden" value="@book.CartItemId" />
-        <input type="hidden" name="bookId" value="@book.Id" />
-    </div>
-    }
-</div>
-@Html.RouteLink("Оформить заказ", new { controller = "Purchase", action = "Index" });

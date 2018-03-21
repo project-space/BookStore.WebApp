@@ -37,6 +37,8 @@ namespace BookStore.WebApp
             container.Register<IPurchaseClient, PurchaseClient>();
             container.Register<ICartItemClient, CartItemClient>();
             container.Register<ICartsClient, CartsClient>();
+
+            
             container.EnableMvc();
         }
     }

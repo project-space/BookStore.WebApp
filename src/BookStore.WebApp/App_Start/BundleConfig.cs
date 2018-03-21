@@ -36,6 +36,8 @@ namespace BookStore.WebApp
 
             bundles.Add(new StyleBundle("~/Content/Menu").Include(
                         "~/Content/menu.css"));
+            bundles.Add(new StyleBundle("~/Content/Cart").Include(
+            "~/Content/Cart.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/menu").Include(
                         "~/Scripts/Menu.js"));

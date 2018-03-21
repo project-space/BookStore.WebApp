@@ -1,0 +1,68 @@
+﻿.purchase_button {
+    display: flex;
+    justify-content: center;
+    height: 60px;
+    border-top: 1px solid #97e5f7;
+    background: #46c9ad;
+    background: -webkit-gradient(linear, left top, left bottom, from(#318566), to(#46c9ad));
+    background: -webkit-linear-gradient(top, #318566, #46c9ad);
+    background: -moz-linear-gradient(top, #318566, #46c9ad);
+    background: -ms-linear-gradient(top, #318566, #46c9ad);
+    background: -o-linear-gradient(top, #318566, #46c9ad);
+    padding: 10px 20px;
+    -webkit-border-radius: 6px;
+    -moz-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+    box-shadow: rgba(0,0,0,1) 0 1px 0;
+    text-shadow: rgba(0,0,0,.4) 0 1px 0;
+    color: #302f30;
+    font-size: 16px;
+    font-weight: 600;
+    font-family: Helvetica, Arial, Sans-Serif;
+    text-decoration: none;
+    vertical-align: middle;
+}
+.title{
+    font-size: 14pt;
+}
+.cart-item{
+    background-color: azure;
+    height: 150px;
+    margin-bottom: 20px;
+}
+.cover{
+    margin-top: 10px;
+    width: 175px;
+}
+a, a:hover{
+    text-decoration:none;
+    color: black;
+}
+.del_btn{
+    color:darkgray;
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    border:none;
+    background: none;
+}
+.del_btn:hover {
+    color: aqua;
+}
+
+#buy-container {
+    background-color: aliceblue;
+    padding: 20px;
+    display: block;
+    margin: 0px auto;
+}
+
+#price {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 600;
+    color: darkcyan;
+    margin-bottom: 20%;
+}
