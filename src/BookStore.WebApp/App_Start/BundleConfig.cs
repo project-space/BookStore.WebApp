@@ -45,6 +45,9 @@ namespace BookStore.WebApp
             bundles.Add(new ScriptBundle("~/bundles/BookPage").Include(
                        "~/Scripts/BookPage.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/Home").Include(
+                       "~/Scripts/Home.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/Cart").Include(
                        "~/Scripts/Cart.js"));
 

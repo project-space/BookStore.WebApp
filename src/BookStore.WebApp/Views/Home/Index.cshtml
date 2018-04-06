@@ -3,34 +3,32 @@
     ViewBag.Title = "Books";
 }
 
-
-
 <div class="book_section row">
     <h2>НОВОЕ</h2>
     <div class=" row">
         @foreach (var book in Model.Novelties)
         {
-        <a href="/BookPage/Index/@book.Id">
-            <div class="col-md-3">
-                <div class="thumbnail book-preview">
-                    <img src="~/Content/images/cover.jpg" alt="...">
-                    <div class="caption">
 
-                        <h6 class="title">@book.Title<br /> @book.Author</h6>
-                        <div class="info">
-                            <div>
-                                <span class="score">@book.Rating</span>
-                                <span class="glyphicon glyphicon-star star"></span><br />
-                                <span class="price label label-success"> @book.Price р.</span>
-                            </div>
-                            <div class="cart-link">
-                                <span class="glyphicon glyphicon-shopping-cart "></span>
-                            </div>
+        <div class="col-md-3">
+            <div class="thumbnail book-preview">
+                <a href="/BookPage/Index/@book.Id">
+                    <img src="~/Content/images/cover.jpg" alt="...">
+                </a>
+                <div class="caption">
+                    <h6 class="title">@book.Title<br /> @book.Author</h6>
+                    <div class="info">
+                        <div>
+                            <span class="score">@book.Rating</span>
+                            <span class="glyphicon glyphicon-star star"></span><br />
+                            <span class="price label label-success"> @book.Price р.</span>
+                        </div>
+                        <div class="cart-link">
+                          <span class="glyphicon glyphicon-shopping-cart"></span>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+        </div>
         }
     </div>
 </div>
@@ -40,27 +38,35 @@
     <div class=" row">
         @foreach (var book in Model.Novelties)
         {
-        <a href="/BookPage/Index/@book.Id">
-            <div class="col-md-3">
-                <div class="thumbnail book-preview">
-                    <img src="~/Content/images/cover.jpg" alt="...">
-                    <div class="caption">
 
-                        <h6 class="title">@book.Title<br /> @book.Author</h6>
-                        <div class="info">
-                            <div>
-                                <span class="score">@book.Rating</span>
-                                <span class="glyphicon glyphicon-star star"></span><br />
-                                <span class="price label label-success"> @book.Price р.</span>
-                            </div>
-                            <div class="cart-link">
-                                <span class="glyphicon glyphicon-shopping-cart "></span>
-                            </div>
+        <div class="col-md-3">
+            <div class="thumbnail book-preview">
+                <a href="/BookPage/Index/@book.Id">
+                    <img src="~/Content/images/cover.jpg" alt="...">
+                </a>
+
+                <div class="caption">
+
+                    <h6 class="title">@book.Title<br /> @book.Author</h6>
+
+                    <div class="info">
+                        <div>
+                            <span class="score">@book.Rating</span>
+                            <span class="glyphicon glyphicon-star star"></span><br />
+                            <span class="price label label-success"> @book.Price р.</span>
+
+                        </div>
+                        <div class="cart-link">
+                            <button class="cart_btn" data-bookId="@book.Id">
+                                <span class="glyphicon glyphicon-shopping-cart"></span>
+                            </button>
                         </div>
                     </div>
                 </div>
             </div>
-        </a>
+
+        </div>
+
         }
     </div>
 

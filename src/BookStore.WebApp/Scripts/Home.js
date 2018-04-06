@@ -1,11 +1,11 @@
 ﻿$(document).ready(function () {
-    $('#cart-btn').click(function () {
+    $('.cart_btn').click(function () {
         var cart = JSON.parse($.cookie('cart'));
-        var bookId = $('#bookId').val();
+        var bookId = $(this).attr('data-bookId');
 
-       //* $.post('/CartItem/Add', { bookId: bookId, cartId: cart.Id }, "json", error:(error) => {
-       //*     console.log(JSON.stringify(error));
-   //* });
+        //* $.post('/CartItem/Add', { bookId: bookId, cartId: cart.Id }, "json", error:(error) => {
+        //*     console.log(JSON.stringify(error));
+        //* });
 
         $.ajax(
             {

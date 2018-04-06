@@ -27,19 +27,30 @@
 .title{
     font-size: 14pt;
 }
+
+.qty {
+    background-color: aliceblue;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 400;
+}
+
 .cart-item{
     background-color: azure;
     height: 150px;
     margin-bottom: 20px;
 }
+
 .cover{
     margin-top: 10px;
     width: 175px;
 }
+
 a, a:hover{
     text-decoration:none;
     color: black;
 }
+
 .del_btn{
     color:darkgray;
     position: absolute;
@@ -48,21 +59,36 @@ a, a:hover{
     border:none;
     background: none;
 }
+
 .del_btn:hover {
-    color: aqua;
+    color: darkcyan;
 }
 
-#buy-container {
+.qty-container {
+    margin-top: 10px;
+    margin-left: 3px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    height: 30px;
+    color: darkcyan;
+}
+
+#price-container {
+    margin-top: 13px;
     background-color: aliceblue;
-    padding: 20px;
+    padding: 10px;
     display: block;
-    margin: 0px auto;
 }
 
 #price {
     text-align: center;
     font-size: 36px;
     font-weight: 600;
+    height: 50px;
     color: darkcyan;
-    margin-bottom: 20%;
+}
+
+input[type=number]{
+    width: 50px;
 }

@@ -1,14 +1,15 @@
 ﻿@model BookStore.WebApp.Models.Book
 @Styles.Render("~/Content/BookPage")
+
 <div class="row">
     <div class="col-lg-1"></div>
     <div class="col-lg-4 img-thumbnail">
-            <img class="cover_image" src="~/Content/images/Volkodav.jpg" />         
+        <img class="cover_image" src="~/Content/images/Volkodav.jpg" />
     </div>
 
     <div class="col-lg-7">
         <div class="page-header">
-            <h1 class="BookTitle">@Model.Title<br/><small>@Model.Author</small></h1>
+            <h1 class="BookTitle">@Model.Title<br /><small>@Model.Author</small></h1>
             <div class="rating">
                 <span class="glyphicon glyphicon-star-empty"></span>
                 <span class="glyphicon glyphicon-star-empty"></span>
@@ -32,4 +33,3 @@
 </div>
 <input id="bookId" type="hidden" value="@Model.Id" />
 
-    

@@ -1,6 +1,7 @@
 ﻿$(document).ready(function () {
     $('.del_btn').click(function () {
-        var itemId = $('#itemId').val();
+        var btn = $(this);
+        var itemId = $(this).attr('data-itemId');
         var selector = '#' + `${itemId}`;
         $.ajax({
             url: '/CartItem/Delete/', data: { itemId: itemId },
@@ -10,13 +11,13 @@
             }
         });
     });
-    myStorage = localStorage;
+    
     var a = document.getElementsByName('bookId');
-    alert(JSON.stringify(a));
     var bookIds = [];
-    for (i = 0; i < a.length; ++i) {
-        var bookId = a[i].getAttribute('value');
-        bookIds.push(bookId);
-    }
+    for (i = 0; i < a .length; ++i) {
+        var bookId = a[i].getAttribute('value'); 
+        bookIds.push(bookId); 
+    } 
     myStorage.setItem('bookIds', JSON.stringify(bookIds));
+
 });

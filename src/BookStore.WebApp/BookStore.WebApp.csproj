@@ -189,6 +189,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\es5-shim.js" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\Home.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -273,7 +274,7 @@
       <Name>BookStore.Common.HttpRequestExecutor.Design</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\submodules\BookStore.Common\src\HttpRequestsExecutor\BookStore.Common.HttpRequestExecutor\BookStore.Common.HttpRequestExecutor.csproj">
-      <Project>{B3E53FE2-9734-4A96-A4E3-FAEC6EA72DF7}</Project>
+      <Project>{b3e53fe2-9734-4a96-a4e3-faec6ea72df7}</Project>
       <Name>BookStore.Common.HttpRequestExecutor</Name>
     </ProjectReference>
   </ItemGroup>
