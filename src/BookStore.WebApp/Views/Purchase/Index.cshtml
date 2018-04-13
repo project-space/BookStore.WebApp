@@ -10,7 +10,7 @@
     <button type="submit">Отправить</button>
 </form>
 
-@section scripts{
+@section Buy{
 <script>
     function call() {
         var details = {};
@@ -25,7 +25,7 @@
             
             $.ajax({
                 type: 'POST',
-                url: '/Purchase/Checkout',
+                url: '/Purchase/CheckoutAsync',
                 data: order,
                 success: function (data) {
                 },

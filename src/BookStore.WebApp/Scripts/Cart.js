@@ -18,6 +18,6 @@
         var bookId = a[i].getAttribute('value'); 
         bookIds.push(bookId); 
     } 
-    myStorage.setItem('bookIds', JSON.stringify(bookIds));
+    localStorage.setItem('bookIds', JSON.stringify(bookIds));
 
 });
